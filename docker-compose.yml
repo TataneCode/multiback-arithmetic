@@ -1,0 +1,6 @@
+﻿services:
+  crypto-dotnet:
+    image: crypto-dotnet
+    build:
+      context: .
+      dockerfile: crypto-dotnet/Dockerfile
