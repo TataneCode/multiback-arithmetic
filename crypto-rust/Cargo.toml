@@ -1,0 +1,12 @@
+[package]
+name = "crypto-api"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+actix-web = "4"
+serde = { version = "1", features = ["derive"] }
+
+[profile.release]
+strip = true
+lto = true

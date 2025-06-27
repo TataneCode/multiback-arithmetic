@@ -1,0 +1,27 @@
+services:
+  api:
+    build:
+      context: ./crypto-api
+      dockerfile: Dockerfile.vendor
+    expose:
+      - "8080"
+    environment:
+      - CRYPTO_SERVER_IP=0.0.0.0
+
+  client:
+    build:
+      context: ./crypto-client
+    expose:
+      - "80"
+    depends_on:
+      - api
+
+  nginx:
+    image: nginx:stable-alpine
+    ports:
+      - "8180:80"
+    volumes:
+      - ./.proxy/nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - api
+      - client
