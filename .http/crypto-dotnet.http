@@ -1,7 +1,7 @@
 # @crypto_dotnet_HostAddress = http://localhost:8980
 @crypto_dotnet_HostAddress = http://localhost:8180/dotnet-api
-# @rust_api_HostAddress = http://localhost:8880
-@rust_api_HostAddress = http://localhost:8180/rust-api
+@rust_api_HostAddress = http://localhost:8880
+#@rust_api_HostAddress = http://localhost:8180/rust-api
 
 GET {{crypto_dotnet_HostAddress}}/weatherforecast/
 Accept: application/json
@@ -9,6 +9,11 @@ Accept: application/json
 ###
 
 GET {{rust_api_HostAddress}}/json
+Accept: application/json
+
+###
+
+GET {{rust_api_HostAddress}}/congruent?n1=10&n2=20&modulo=3
 Accept: application/json
 
 ###

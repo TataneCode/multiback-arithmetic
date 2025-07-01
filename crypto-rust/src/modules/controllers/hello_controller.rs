@@ -1,5 +1,5 @@
-use actix_web::{get, HttpResponse, Responder};
 use crate::modules::responses::hello_response::HelloResponse;
+use actix_web::{HttpResponse, Responder, get};
 
 #[get("/hello")]
 pub async fn hello() -> impl Responder {
