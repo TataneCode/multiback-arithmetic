@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package congruent;
+
+service ModularService {
+  rpc IsCongruent (CongruentRequest) returns (CongruentResponse);
+}
+
+message CongruentRequest {
+  int32 n1 = 1;
+  int32 n2 = 2;
+  int32 modulo = 3;
+}
+
+message CongruentResponse {
+  int32 n1_remaining = 1;
+  int32 n2_remaining = 2;
+  bool is_congruent = 3;
+}
